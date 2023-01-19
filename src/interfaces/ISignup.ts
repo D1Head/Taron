@@ -17,19 +17,3 @@ export interface ISignup {
   profileUlr?: string;
   otp?: string;
 }
-
-export interface IRequestSignUpOtp {
-  fullName: string;
-  email?: string;
-  DOB: string;
-}
-
-export interface IVerifyOtp {
-  email?: string;
-  otp?: string;
-}
-
-export interface ILogin {
-  email?: string;
-  password?: string;
-}

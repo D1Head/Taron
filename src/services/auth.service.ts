@@ -16,7 +16,7 @@ import {
   IVerifyOtp,
   ISignup,
   ILogin,
-} from '../interfaces/Isignup';
+} from '../interfaces';
 import OtpRepo from '../dbservices/otp.table';
 import { IOtp } from '../models/Otp';
 import Dtos from '../Dto/user.dto';

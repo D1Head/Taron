@@ -1,5 +1,5 @@
 import { Service } from 'typedi';
-import { ISignup } from '../interfaces/Isignup';
+import { ISignup } from '../interfaces';
 import { UserModel, IUser } from '../models/User';
 @Service()
 export default class UserRepo {

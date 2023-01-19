@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 import { values } from '../../key';
-import { update_job } from './schedules.job';
+// import { update_job } from './schedules.job';
 const { email_password, sender_email } = values;
 
 const transporter = nodemailer.createTransport({
@@ -45,7 +45,7 @@ const emailSender = async (
       } else {
         bool = true;
         console.log('Email sent successfully', bool);
-        update_job(property_id);
+        // update_job(property_id);
         // return bool;
       }
     });

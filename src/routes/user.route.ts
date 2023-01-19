@@ -4,12 +4,12 @@ import { Router } from 'express';
 import LogsController from '../controller/user.controller';
 import { Container } from 'typedi';
 import { verify } from '../middleware/verifyToken';
-import { agenda } from '../utils/schedules.job';
+// import { agenda } from '../utils/schedules.job';
 const router = Router();
 
 const controller = Container.get(LogsController);
 
-router.patch('/job', controller.createLogsController);
+// router.patch('/job', controller.createLogsController);
 
 // router.post('/job', agenda);
 

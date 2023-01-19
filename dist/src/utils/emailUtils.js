@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.emailSender = void 0;
 const nodemailer_1 = __importDefault(require("nodemailer"));
 const key_1 = require("../../key");
-const schedules_job_1 = require("./schedules.job");
+// import { update_job } from './schedules.job';
 const { email_password, sender_email } = key_1.values;
 const transporter = nodemailer_1.default.createTransport({
     host: 'smtp.ethereal.email',
@@ -49,7 +49,7 @@ const emailSender = (email, subject, html, attachments = null, property_id) => _
             else {
                 bool = true;
                 console.log('Email sent successfully', bool);
-                (0, schedules_job_1.update_job)(property_id);
+                // update_job(property_id);
                 // return bool;
             }
         });

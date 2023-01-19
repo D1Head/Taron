@@ -9,8 +9,8 @@ const express_1 = require("express");
 // const { signUpValidate } = require("../validations/user.validations");
 const user_controller_1 = __importDefault(require("../controller/user.controller"));
 const typedi_1 = require("typedi");
+// import { agenda } from '../utils/schedules.job';
 const router = (0, express_1.Router)();
 exports.router = router;
 const controller = typedi_1.Container.get(user_controller_1.default);
-router.patch('/job', controller.createLogsController);
 // ts-node-dev --respawn --pretty --transpile-only
