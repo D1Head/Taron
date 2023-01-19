@@ -27,4 +27,11 @@ export default class Helpers {
   static slugifyName = (fullName: string) => {
     return `${fullName.replace(/ /g, '')}${this.generateRandom(5, 'numeric')}`;
   };
+
+
+  static isPasswordStrong = (password: string):Boolean => {
+    var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    const value =  strongRegex.test(password);
+    return value
+  }
 }

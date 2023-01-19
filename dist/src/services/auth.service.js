@@ -43,6 +43,7 @@ let AuthService = class AuthService {
             (0, responder_1.abortIf)(user, http_status_1.default.BAD_REQUEST, 'Email already Exists');
             (0, responder_1.abortIf)(data.password !== data.confirmPassword, http_status_1.default.BAD_REQUEST, 'Passwords do not match');
             data.password = data.password.trim();
+            (0, responder_1.abortIf)(!helper_service_1.default.isPasswordStrong(data.password), http_status_1.default.BAD_REQUEST, 'Password is not strong enough');
             const hashed_password = yield (0, passwordHash_1.hash)(data.password);
             //create provider
             const find_otp = yield this.otpRepo.find({

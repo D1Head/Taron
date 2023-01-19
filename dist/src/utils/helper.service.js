@@ -31,3 +31,8 @@ Helpers.generate = (length, characters) => {
 Helpers.slugifyName = (fullName) => {
     return `${fullName.replace(/ /g, '')}${_a.generateRandom(5, 'numeric')}`;
 };
+Helpers.isPasswordStrong = (password) => {
+    var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    const value = strongRegex.test(password);
+    return value;
+};

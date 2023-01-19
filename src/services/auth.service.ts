@@ -39,6 +39,7 @@ export default class AuthService {
       'Passwords do not match'
     );
     data.password = data.password.trim();
+    abortIf(!Helpers.isPasswordStrong(data.password), httpStatus.BAD_REQUEST, 'Password is not strong enough');
     const hashed_password = await hash(data.password);
     //create provider
     const find_otp = await this.otpRepo.find({
